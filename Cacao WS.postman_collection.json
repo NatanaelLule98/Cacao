@@ -1,0 +1,2900 @@
+{
+	"info": {
+		"_postman_id": "92f17ab0-8aa7-4da4-9479-9fde587a522c",
+		"name": "Cacao WS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cacao Web Services",
+			"item": [
+				{
+					"name": "Develop",
+					"item": [
+						{
+							"name": "Tarjetas Fisicas",
+							"item": [
+								{
+									"name": "ActualizarDatosCliente",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"TipoActualizacion\": \"1\",\n  \"ClaveEmpresa\": \"100\",\n  \"Tarjeta\": 9900030444205069,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\",\n  \"Nombre\": \"Adrian\",\n  \"PrimerApellido\": \"Gamboa\",\n  \"SegundoApellido\": \"Lule\",\n  \"NombreEmbozar\": \"x\",\n  \"FechaNacimiento\": \"1998-03-19\",\n  \"Genero\": \"M\",\n  \"Correo\": \"usuario@ejemplo.com\",\n  \"RFC\": \"XXXXXXX\",\n  \"TipoCliente\": \"1\",\n  \"Aceptacion\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/ActualizarDatosCliente",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"ActualizarDatosCliente"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AsignarNIP",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"IDSolicitud\": 1,\n  \"Tarjeta\": 9900030444205069,\n  \"NIPNuevo\": \"1000\",\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/AsignarNIP",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"AsignarNIP"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "SolicitarReposicion",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"IDSolicitud\": 1,\n  \"Tarjeta\": 9900030444205069,\n  \"NombreEmbozado\": \"Prueba Amarello\",\n  \"RazonReposicion\": 4,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/SolicitarReposicion",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"SolicitarReposicion"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ActivarTarjeta",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"IDSolicitud\": 1,\n  \"Tarjeta\": 9900030444205069,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/ActivarTarjeta",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"ActivarTarjeta"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "BloquearTarjeta",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Tarjeta\": 9900030444205069,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\",\n  \"MotivoBloqueo\": \"015\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/BloquearTarjeta",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"BloquearTarjeta"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DesbloquearTarjeta",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Tarjeta\": 9900030444205069,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\",\n  \"MotivoBloqueo\": \"015\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/DesbloquearTarjeta",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"DesbloquearTarjeta"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AltaTarjetaOnb",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXw4NzNjNGU2Ny01YzY2LTRiYzItODYyMS01NzczMTNlZDNkZjV8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRZM09Ea3hMQ0psZUhBaU9qRTJOamczTURNNE9URXNJbWxoZENJNk1UWXpOekUyTnpnNU1Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuR2tCbTF3VmJpeXZKUHhwQkdZWS1BRzdIUmVMM2xGN3UxaktnclRYNmJYRQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": \"161122\",\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"RFC\": \"AAAA010101111\",\n    \"CURP\": \"AAAA010101AAAAAA01\",\n    \"ClaveEmpresa\": \"99000304\",\n    \"RegistroCliente\": \"778000257\",\n    \"Nombre\": \"Prueba Amarello\",\n    \"PrimerApellido\": \"SA\",\n    \"SegundoApellido\": \"CV\",\n    \"NombreEmbozado\": \"Prueba Amarello\",\n    \"Correo\": \"ejemplo@prueba.com\",\n    \"Telefono\": \"5522113322\",\n    \"FechaNacimiento\": \"1990-01-01\",\n    \"Genero\": \"F\",\n    \"EntidadNacimiento\": \"01\",\n    \"Ocupacion\": \"NA\",\n    \"Profesion\": \"NA\",\n    \"GiroNegocio\": \"NA\",\n    \"Latitud\": \"NA\",\n    \"Longitud\": \"NA\",\n    \"Ciudad\": \"MX\",\n    \"Calle\": \"NA\",\n    \"NumExterior\": \"NA\",\n    \"NumInterior\": \"NA\",\n    \"Colonia\": \"NA\",\n    \"Delegacion\": \"NA\",\n    \"ClaveMunicipio\": \"005\",\n    \"ClaveEstado\": \"09\",\n    \"CP\": \"07530\",\n    \"TipoManufactura\": \"V\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/AltaTarjetaOnb",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"AltaTarjetaOnb"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "BajaTarjetahabiente",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Empresa\": 99000304,\n  \"RegistroCliente\": \"1234567890\",\n  \"Tarjeta\": 9900030444205069,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/BajaTarjetahabiente",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"BajaTarjetahabiente"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ConsultarTarjetaCredito",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "42MDFtGQJj1rH3FKWPkGhxNAXGkA",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000105,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/ConsultarTarjetaCredito?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"ConsultarTarjetaCredito"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AsignarDiaFechaCorte",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA0MDYxMDYwODEwNjAxMjk5MTY5ODc0MjIyMzI0NTI4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxkMGYwMmVjNS1mNWU1LTRkMzAtODI4Mi0xMGNiMDFmMWE0NmJ8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTWpFME5qTXlMQ0psZUhBaU9qRTJOamczTlRBMk16SXNJbWxoZENJNk1UWXpOekl4TkRZek1pd2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY2tjUkJDMjJGSTFuNld6WWQxYmxCY3o0T3dsdHQ5YUVNdEI0eTZwMUF6WQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000030,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"DiaCorte\": 10\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/AsignarDiaFechaCorte",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"AsignarDiaFechaCorte"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Notificación",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "wx7tEDx0J2TNniCTbIv6Upy5zuWY",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Tarjeta\": \"9900030400000030\",\n  \"NumeroCuenta\": \"\",\n  \"Importe\": 100.23,\n  \"Moneda\": \"MXN\",\n  \"FechaHora\": \"18/10/2021 13:41:01\",\n  \"NumeroAutorizacion\": \"\",\n  \"POSEntryMode\": \"01\",\n  \"ClaveMovimiento\": \"\",\n  \"CodigoProceso\": \"211000\",\n  \"NumeroAfiliacionComercio\": \"\",\n  \"NombreComercio\": \"\",\n  \"MCC\": \"0000\",\n  \"Nombre\": \"Adrian\",\n  \"PrimerApellido\": \"Gamboa\",\n  \"SegundoApellido\": \"Lule\",\n  \"Telefono\": \"5555555555\",\n  \"Correo\": \"usuario@ejemplo.com\",\n  \"TipoMedioAcceso\": \"\",\n  \"MedioAcceso\": \"\",\n  \"InstitucionOrdenante\": \"\",\n  \"InstitucionBeneficiaria\": \"90646\",\n  \"ClaveRastreo\": \"\",\n  \"NombreOrdenante\": \"\",\n  \"RfcCurpOrdenante\": \"AAAA010101112\",\n  \"NombreBeneficiario\": \"Prueba Amarello tres\",\n  \"CuentaBeneficiario\": \"\",\n  \"RfcCurpBeneficiario\": \"AAAA010101112\",\n  \"ConceptoPago\": \"pago\",\n  \"ReferenciaNumerica\": \"\",\n  \"TipoManufactura\": \"V\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/credit-card/management/notification?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"management",
+												"notification"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Tarjetas Virtuales",
+							"item": [
+								{
+									"name": "AltaTarjetaOnb",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "NCUkOGdgK8jyYOmOvGVEbfzhcDHP",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": \"161123\",\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"RFC\": \"AAAA010101112\",\n    \"CURP\": \"AAAA010101AAAAAA01\",\n    \"ClaveEmpresa\": \"99000304\",\n    \"RegistroCliente\": \"778000257\",\n    \"Nombre\": \"Prueba Natanael dos\",\n    \"PrimerApellido\": \"SA\",\n    \"SegundoApellido\": \"CV\",\n    \"NombreEmbozado\": \"Prueba Natanael dos\",\n    \"Correo\": \"ejemplo2@prueba.com\",\n    \"Telefono\": \"5522113324\",\n    \"FechaNacimiento\": \"1990-02-02\",\n    \"Genero\": \"M\",\n    \"EntidadNacimiento\": \"01\",\n    \"Ocupacion\": \"NA\",\n    \"Profesion\": \"NA\",\n    \"GiroNegocio\": \"NA\",\n    \"Latitud\": \"NA\",\n    \"Longitud\": \"NA\",\n    \"Ciudad\": \"MX\",\n    \"Calle\": \"NA\",\n    \"NumExterior\": \"NA\",\n    \"NumInterior\": \"NA\",\n    \"Colonia\": \"NA\",\n    \"Delegacion\": \"NA\",\n    \"ClaveMunicipio\": \"005\",\n    \"ClaveEstado\": \"09\",\n    \"CP\": \"07530\",\n    \"TipoManufactura\": \"V\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/AltaTarjetaOnb?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"AltaTarjetaOnb"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ActivarTarjetaCredito",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "NCUkOGdgK8jyYOmOvGVEbfzhcDHP",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": \"1\",\n    \"Tarjeta\": \"9900030499954246\",\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"DiaCorte\": \"15\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/ActivarTarjetaCredito?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ActivarTarjetaCredito"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AsignarNIPVirtual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "S0UzDMNSeHD5KSAV6GR51v5uUPR0",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"IDSolicitud\": 1,\n  \"Tarjeta\": 9900030400000121,\n  \"NIPNuevo\": \"1110\",\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/AsignarNIPVirtual?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"AsignarNIPVirtual"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "BloquearTarjetaVirtual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "S0UzDMNSeHD5KSAV6GR51v5uUPR0",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000121,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"MotivoBloqueo\": \"015\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/BloquearTarjetaVirtual?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"BloquearTarjetaVirtual"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DesbloquearTarjetaVirtual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "S0UzDMNSeHD5KSAV6GR51v5uUPR0",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000121,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"MotivoBloqueo\": \"015\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/DesbloquearTarjetaVirtual?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"DesbloquearTarjetaVirtual"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CancelarTarjetaVirtual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "gcPur4Eag5NHAGNFB8BlTYt94IXI",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000121,\n    \"MotivoCancelacion\": \"03\",\n    \"TipoMedioAcceso\": \"\",\n    \"DescRespuesta\": \"\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/CancelarTarjetaVirtual?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"CancelarTarjetaVirtual"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ConsultarTarjetaCreditoVirtual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "gAEpqC3j7fIfWrtjsqJemrtGlojG",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000113,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/ConsultarTarjetaCredito?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ConsultarTarjetaCredito"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "MovimientoManual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "gAEpqC3j7fIfWrtjsqJemrtGlojG",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": \"1\",\n    \"Tarjeta\": 9900030400000121,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"Importe\": 100.99,\n    \"ClaveMovimiento\": \"T5\",\n    \"RefNumerica\": \"1\",\n    \"Observaciones\": \"Prueba buena\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/MovimientoManual?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"MovimientoManual"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ObtenerMovimientoManual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "ydpBX0x0k3Arh1uPJ2mUjw4qyKe1",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": \"1\",\n    \"ClaveMovimiento\": \"T5\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/ObtenerMovimientoManual",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ObtenerMovimientoManual"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ReasignarTarjeta",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "GVKRmpuqhAEL0t3zoXSnQyOPK6xr",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IdSolicitud\": 1,\n    \"TipoMedioAccesoAnterior\": \"TAR\",\n    \"MedioAccesoAnterior\": \"9900030400000030\",\n    \"TipoMedioAccesoNuevo\": \"TAR\",\n    \"MedioAccesoNuevo\": \"9900030400000071\",\n    \"TarjetaNueva\": 9900030400000071,\n    \"TarjetaAnterior\": 9900030400000030\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/ReasignarTarjeta",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ReasignarTarjeta"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ConsultarMovimientosTarjeta",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "gAEpqC3j7fIfWrtjsqJemrtGlojG",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000121,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"FechaInicial\": \"\",\n    \"FechaFinal\": \"\",\n    \"MaxMovimientos\": 10\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/ConsultarMovimientosTarjeta?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ConsultarMovimientosTarjeta"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AsignarLimiteCredito",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "a5dbY1DsmuZme4o6B0A6qIA0BiaK",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000121,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"LimiteCredito\": 20001.99\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/AsignarLimiteCredito?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"AsignarLimiteCredito"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GeneraCodigoValidacion",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "zJfmYY5ExzWVXRDZBg82HTLklIuo",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Tarjeta\": 9900030400000139,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\"\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/GeneraCodigoValidacion?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"GeneraCodigoValidacion"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ConsultarFechaValorD2",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "f1wRKKvdbiTd0GwGZ4cRbDH56G97",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Tarjeta\": 9900030499954246\n}"
+										},
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/virtual/credit-card/ConsultaFechasValorD2?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ConsultaFechasValorD2"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Login",
+							"item": [
+								{
+									"name": "Oauth",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "kbwrPnyosmrz0j82NLBsSIHHCGaAvi3E5MAIOuFKsa0c3PKh6p60v4GjY9IsiwvT",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Length",
+												"value": "0",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/oauth/client_credential/accesstoken?grant_type=client_credentials",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"oauth",
+												"client_credential",
+												"accesstoken"
+											],
+											"query": [
+												{
+													"key": "grant_type",
+													"value": "client_credentials"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Login Cacao",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "NCUkOGdgK8jyYOmOvGVEbfzhcDHP",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://dev.totalplay.amarello.cloud/v1/auth/Login?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"dev",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"auth",
+												"Login"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Production",
+					"item": [
+						{
+							"name": "Tarjetas Fisicas",
+							"item": [
+								{
+									"name": "ActualizarDatosCliente",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"TipoActualizacion\": \"1\",\n  \"ClaveEmpresa\": \"100\",\n  \"Tarjeta\": 9900030444205069,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\",\n  \"Nombre\": \"Adrian\",\n  \"PrimerApellido\": \"Gamboa\",\n  \"SegundoApellido\": \"Lule\",\n  \"NombreEmbozar\": \"x\",\n  \"FechaNacimiento\": \"1998-03-19\",\n  \"Genero\": \"M\",\n  \"Correo\": \"usuario@ejemplo.com\",\n  \"RFC\": \"XXXXXXX\",\n  \"TipoCliente\": \"1\",\n  \"Aceptacion\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/ActualizarDatosCliente",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"ActualizarDatosCliente"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AsignarNIP",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"IDSolicitud\": 1,\n  \"Tarjeta\": 9900030444205069,\n  \"NIPNuevo\": \"1000\",\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/AsignarNIP",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"AsignarNIP"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "SolicitarReposicion",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"IDSolicitud\": 1,\n  \"Tarjeta\": 9900030444205069,\n  \"NombreEmbozado\": \"Prueba Amarello\",\n  \"RazonReposicion\": 4,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/SolicitarReposicion",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"SolicitarReposicion"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ActivarTarjeta",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"IDSolicitud\": 1,\n  \"Tarjeta\": 9900030444205069,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/ActivarTarjeta",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"ActivarTarjeta"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "BloquearTarjeta",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Tarjeta\": 9900030444205069,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\",\n  \"MotivoBloqueo\": \"015\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/BloquearTarjeta",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"BloquearTarjeta"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DesbloquearTarjeta",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Tarjeta\": 9900030444205069,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\",\n  \"MotivoBloqueo\": \"015\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/DesbloquearTarjeta",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"DesbloquearTarjeta"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AltaTarjetaOnb",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXw4NzNjNGU2Ny01YzY2LTRiYzItODYyMS01NzczMTNlZDNkZjV8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRZM09Ea3hMQ0psZUhBaU9qRTJOamczTURNNE9URXNJbWxoZENJNk1UWXpOekUyTnpnNU1Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuR2tCbTF3VmJpeXZKUHhwQkdZWS1BRzdIUmVMM2xGN3UxaktnclRYNmJYRQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": \"161122\",\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"RFC\": \"AAAA010101111\",\n    \"CURP\": \"AAAA010101AAAAAA01\",\n    \"ClaveEmpresa\": \"99000304\",\n    \"RegistroCliente\": \"778000257\",\n    \"Nombre\": \"Prueba Amarello\",\n    \"PrimerApellido\": \"SA\",\n    \"SegundoApellido\": \"CV\",\n    \"NombreEmbozado\": \"Prueba Amarello\",\n    \"Correo\": \"ejemplo@prueba.com\",\n    \"Telefono\": \"5522113322\",\n    \"FechaNacimiento\": \"1990-01-01\",\n    \"Genero\": \"F\",\n    \"EntidadNacimiento\": \"01\",\n    \"Ocupacion\": \"NA\",\n    \"Profesion\": \"NA\",\n    \"GiroNegocio\": \"NA\",\n    \"Latitud\": \"NA\",\n    \"Longitud\": \"NA\",\n    \"Ciudad\": \"MX\",\n    \"Calle\": \"NA\",\n    \"NumExterior\": \"NA\",\n    \"NumInterior\": \"NA\",\n    \"Colonia\": \"NA\",\n    \"Delegacion\": \"NA\",\n    \"ClaveMunicipio\": \"005\",\n    \"ClaveEstado\": \"09\",\n    \"CP\": \"07530\",\n    \"TipoManufactura\": \"V\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/AltaTarjetaOnb",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"AltaTarjetaOnb"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "BajaTarjetahabiente",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxjM2U5MTQ1Ni1kNjM4LTQxZDgtYjc0NS00NDVkNjI4MzM3MjF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTVRnME5EazFMQ0psZUhBaU9qRTJOamczTWpBME9UVXNJbWxoZENJNk1UWXpOekU0TkRRNU5Td2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY09wSGpXdkhJU1Q0RzJhd3BKbURrUjlvX0QwS1o2QjZ2SE1TUjRuXzJIQQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Empresa\": 99000304,\n  \"RegistroCliente\": \"1234567890\",\n  \"Tarjeta\": 9900030444205069,\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/BajaTarjetahabiente",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"BajaTarjetahabiente"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ConsultarTarjetaCredito",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "42MDFtGQJj1rH3FKWPkGhxNAXGkA",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000105,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/ConsultarTarjetaCredito?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"ConsultarTarjetaCredito"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AsignarDiaFechaCorte",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA0MDYxMDYwODEwNjAxMjk5MTY5ODc0MjIyMzI0NTI4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxkMGYwMmVjNS1mNWU1LTRkMzAtODI4Mi0xMGNiMDFmMWE0NmJ8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTWpFME5qTXlMQ0psZUhBaU9qRTJOamczTlRBMk16SXNJbWxoZENJNk1UWXpOekl4TkRZek1pd2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuY2tjUkJDMjJGSTFuNld6WWQxYmxCY3o0T3dsdHQ5YUVNdEI0eTZwMUF6WQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000030,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"DiaCorte\": 10\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/AsignarDiaFechaCorte",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"AsignarDiaFechaCorte"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Notificación",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "wx7tEDx0J2TNniCTbIv6Upy5zuWY",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Tarjeta\": \"9900030400000030\",\n  \"NumeroCuenta\": \"\",\n  \"Importe\": 100.23,\n  \"Moneda\": \"MXN\",\n  \"FechaHora\": \"18/10/2021 13:41:01\",\n  \"NumeroAutorizacion\": \"\",\n  \"POSEntryMode\": \"01\",\n  \"ClaveMovimiento\": \"\",\n  \"CodigoProceso\": \"211000\",\n  \"NumeroAfiliacionComercio\": \"\",\n  \"NombreComercio\": \"\",\n  \"MCC\": \"0000\",\n  \"Nombre\": \"Adrian\",\n  \"PrimerApellido\": \"Gamboa\",\n  \"SegundoApellido\": \"Lule\",\n  \"Telefono\": \"5555555555\",\n  \"Correo\": \"usuario@ejemplo.com\",\n  \"TipoMedioAcceso\": \"\",\n  \"MedioAcceso\": \"\",\n  \"InstitucionOrdenante\": \"\",\n  \"InstitucionBeneficiaria\": \"90646\",\n  \"ClaveRastreo\": \"\",\n  \"NombreOrdenante\": \"\",\n  \"RfcCurpOrdenante\": \"AAAA010101112\",\n  \"NombreBeneficiario\": \"Prueba Amarello tres\",\n  \"CuentaBeneficiario\": \"\",\n  \"RfcCurpBeneficiario\": \"AAAA010101112\",\n  \"ConceptoPago\": \"pago\",\n  \"ReferenciaNumerica\": \"\",\n  \"TipoManufactura\": \"V\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/credit-card/management/notification?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"credit-card",
+												"management",
+												"notification"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Tarjetas Virtuales",
+							"item": [
+								{
+									"name": "AltaTarjetaOnb",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "wbz0O0bYOAC01HXFO8f01iK4V51o",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": \"161123\",\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"RFC\": \"AAAA010101112\",\n    \"CURP\": \"AAAA010101AAAAAA01\",\n    \"ClaveEmpresa\": \"99000304\",\n    \"RegistroCliente\": \"778000257\",\n    \"Nombre\": \"Prueba Natanael dos\",\n    \"PrimerApellido\": \"SA\",\n    \"SegundoApellido\": \"CV\",\n    \"NombreEmbozado\": \"Prueba Natanael dos\",\n    \"Correo\": \"ejemplo2@prueba.com\",\n    \"Telefono\": \"5522113324\",\n    \"FechaNacimiento\": \"1990-02-02\",\n    \"Genero\": \"M\",\n    \"EntidadNacimiento\": \"01\",\n    \"Ocupacion\": \"NA\",\n    \"Profesion\": \"NA\",\n    \"GiroNegocio\": \"NA\",\n    \"Latitud\": \"NA\",\n    \"Longitud\": \"NA\",\n    \"Ciudad\": \"MX\",\n    \"Calle\": \"NA\",\n    \"NumExterior\": \"NA\",\n    \"NumInterior\": \"NA\",\n    \"Colonia\": \"NA\",\n    \"Delegacion\": \"NA\",\n    \"ClaveMunicipio\": \"005\",\n    \"ClaveEstado\": \"09\",\n    \"CP\": \"07530\",\n    \"TipoManufactura\": \"V\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/AltaTarjetaOnb",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"AltaTarjetaOnb"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ActivarTarjetaCredito",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "wbz0O0bYOAC01HXFO8f01iK4V51o",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": \"1\",\n    \"Tarjeta\": \"9900030400000113\",\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"DiaCorte\": \"15\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/ActivarTarjetaCredito",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ActivarTarjetaCredito"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AsignarNIPVirtual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "iDxrNv3sVydLSLbe3HerHt0ivE3A",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"IDSolicitud\": 1,\n  \"Tarjeta\": 9900030400000105,\n  \"NIPNuevo\": \"1110\",\n  \"MedioAcceso\": \"\",\n  \"TipoMedioAcceso\": \"\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/AsignarNIPVirtual?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"AsignarNIPVirtual"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "BloquearTarjetaVirtual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA0MDYxMDYwODEwNjAxMjk5MTY5ODc0MjIyMzI0NTI4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXxlYjYzOGU5OC0wOWVjLTQxM2ItODE3ZC1lNDQ4NzM3NWUxZjV8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTXpNMU1UY3lMQ0psZUhBaU9qRTJOamc0TnpFeE56SXNJbWxoZENJNk1UWXpOek16TlRFM01pd2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuTXU5SUZrUk1KbzFBNl9ramo3dEpubi1odF9FWDdJVi1Qem51SzdWaldVVQ==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000030,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"MotivoBloqueo\": \"015\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/BloquearTarjetaVirtual",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"BloquearTarjetaVirtual"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": null,
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DesbloquearTarjetaVirtual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "YjRiMDBjYmEtZDlhNC00MTg5LThlODEtOWEwMDRjMzRhZjJmNDA0MDYxMDYwODEwNjAxMjk5MTY5ODc0MjIyMzI0NTI4MTIyNDc1MDUyNDg1MTQ5NDA4MjA3MDg3ODE4NzRBNUE2NzcwMUE3NDA5ODg1QTgwM0E0MDQ5NDg3MDU3NkEyOTM3MjkyMDYwNzU2ODEwODA5NDI1NzY3ODYxMDk1QTMxMTEyMTM0NTQzNDQ4MDE1MTY2Mzc5ODkxNzkwMTg5MTk2MjAyMTU5QTE2ODIzMzYzOTI0MjU4ODI2MjczMjk3MDBBOTQ2Mjk4NDgzNDEzMTAxNzEzNXw0ZWIyMGVlZC04M2MwLTQwMDItOTU5Yi0zOWY0MDcyYzBkZTF8ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFibWx4ZFdWZmJtRnRaU0k2SWtZNE16SkZOMFF3T1RFd056aENPVGxHUWtRek56WTVSVEZCTlRBelF6WTVJaXdpYm1KbUlqb3hOak0zTWpFd09EVTBMQ0psZUhBaU9qRTJOamczTkRZNE5UUXNJbWxoZENJNk1UWXpOekl4TURnMU5Dd2lhWE56SWpvaWFIUjBjRG92TDJ4dlkyRnNhRzl6ZENJc0ltRjFaQ0k2SW1oMGRIQTZMeTlzYjJOaGJHaHZjM1FpZlEuM2g2VjZtSV94SnhVM1lfWFZHSUd4bjFYS0VYUk5Od19PcTR1cVo0RV9xcw==",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000022,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"MotivoBloqueo\": \"015\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/DesbloquearTarjetaVirtual",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"DesbloquearTarjetaVirtual"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CancelarTarjetaVirtual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "wbz0O0bYOAC01HXFO8f01iK4V51o",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000113,\n    \"MotivoCancelacion\": \"03\",\n    \"TipoMedioAcceso\": \"\",\n    \"DescRespuesta\": \"\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/CancelarTarjetaVirtual",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"CancelarTarjetaVirtual"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": null,
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ConsultarTarjetaCreditoVirtual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "wbz0O0bYOAC01HXFO8f01iK4V51o",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000113,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/ConsultarTarjetaCredito?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ConsultarTarjetaCredito"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "MovimientoManual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "iDxrNv3sVydLSLbe3HerHt0ivE3A",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": \"1\",\n    \"Tarjeta\": 9900030400000071,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"Importe\": 100.99,\n    \"ClaveMovimiento\": \"T5\",\n    \"RefNumerica\": \"1\",\n    \"Observaciones\": \"Prueba buena\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/MovimientoManual",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"MovimientoManual"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ObtenerMovimientoManual",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "ydpBX0x0k3Arh1uPJ2mUjw4qyKe1",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": \"1\",\n    \"ClaveMovimiento\": \"T5\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/ObtenerMovimientoManual",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ObtenerMovimientoManual"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ReasignarTarjeta",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "GVKRmpuqhAEL0t3zoXSnQyOPK6xr",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IdSolicitud\": 1,\n    \"TipoMedioAccesoAnterior\": \"TAR\",\n    \"MedioAccesoAnterior\": \"9900030400000030\",\n    \"TipoMedioAccesoNuevo\": \"TAR\",\n    \"MedioAccesoNuevo\": \"9900030400000071\",\n    \"TarjetaNueva\": 9900030400000071,\n    \"TarjetaAnterior\": 9900030400000030\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/ReasignarTarjeta",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ReasignarTarjeta"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ConsultarMovimientosTarjeta",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "iDxrNv3sVydLSLbe3HerHt0ivE3A",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000105,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"FechaInicial\": \"\",\n    \"FechaFinal\": \"\",\n    \"MaxMovimientos\": 10\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/ConsultarMovimientosTarjeta?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ConsultarMovimientosTarjeta"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AsignarLimiteCredito",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "wbz0O0bYOAC01HXFO8f01iK4V51o",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IDSolicitud\": 1,\n    \"Tarjeta\": 9900030400000105,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\",\n    \"LimiteCredito\": 20001.99\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/AsignarLimiteCredito",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"AsignarLimiteCredito"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GeneraCodigoValidacion",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "zJfmYY5ExzWVXRDZBg82HTLklIuo",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Tarjeta\": 9900030400000139,\n    \"MedioAcceso\": \"\",\n    \"TipoMedioAcceso\": \"\"\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/GeneraCodigoValidacion?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"GeneraCodigoValidacion"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ConsultarFechaValorD2",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "NCUkOGdgK8jyYOmOvGVEbfzhcDHP",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"Tarjeta\": 9900030499954246\n}"
+										},
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/virtual/credit-card/ConsultaFechasValorD2?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"virtual",
+												"credit-card",
+												"ConsultaFechasValorD2"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Login",
+							"item": [
+								{
+									"name": "Oauth Prod",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "kbwrPnyosmrz0j82NLBsSIHHCGaAvi3E5MAIOuFKsa0c3PKh6p60v4GjY9IsiwvT",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Length",
+												"value": "0",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/oauth/client_credential/accesstoken?grant_type=client_credentials",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"oauth",
+												"client_credential",
+												"accesstoken"
+											],
+											"query": [
+												{
+													"key": "grant_type",
+													"value": "client_credentials"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Login Cacao Prod",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "wxB90vuQAMqseiNxD4d61V0YEGiT",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Credenciales",
+												"value": "RjgzMkU3RDA5MTA3OEI5OUZCRDM3NjlFMUE1MDNDNjk6RjUxOTA0MTM2NEQ4MjE2NEIwNDVDNjlDNDhDQkQ5Q0I=",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://production.totalplay.amarello.cloud/v1/auth/Login?apikey=ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd",
+											"protocol": "https",
+											"host": [
+												"production",
+												"totalplay",
+												"amarello",
+												"cloud"
+											],
+											"path": [
+												"v1",
+												"auth",
+												"Login"
+											],
+											"query": [
+												{
+													"key": "apikey",
+													"value": "ZpxvEOePNHotHGphrgcwGN080FBhw5qocRHEEbw0E9GFm9dd"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

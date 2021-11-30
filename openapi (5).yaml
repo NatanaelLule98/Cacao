@@ -1,0 +1,3095 @@
+openapi: 3.0.0
+info:
+  title: CacaoVirtualCreditCards
+  version: '1.0'
+  contact:
+    name: API Docs
+servers:
+  - url: https://dev.totalplay.amarello.cloud/v1
+    variables:
+      environment:
+        default: dev.totalplay
+        description: develop environment
+        enum:
+          - dev.totalplay
+          - qa.totalplay
+          - production.totalplay
+paths:
+  /auth/Login:
+    post:
+      security:
+        - Bearer: []
+      description: 'Metodo que autentica a un usuario'
+      summary: 'Inicio de sesión de un usuario'
+      operationId: 'ops_001'
+      tags:
+        - Login
+      
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/loginResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/AltaTarjetaOnb:
+    post:
+      security:
+        - Bearer: []
+      description: 'Metodo que crea y asigna una nueva tarjeta'
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      summary: 'Asigna tarjeta de crédito fisica o virtual'
+      operationId: 'ops_002'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createCardRequest'
+        description: Objeto que asigna un nuevo NIP secreto a una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createCardResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/ActivarTarjetaCredito:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que activa una nueva tarjeta.'
+      summary: 'Activa una nueva tarjeta de crédito'
+      operationId: 'ops_003'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/activatenewCreditCardRequest'
+        description: Objeto de entrada para cambiar status a activo de una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/activatenewCreditCardResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/AsignarNIPVirtual:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que asigna un NIP a una tarjeta'
+      summary: 'Asigna NIP a tarjeta de crédito'
+      operationId: 'ops_004'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/assignNipRequest'
+        description: Objeto que asigna un nuevo NIP secreto a una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/assignNipResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/BloquearTarjetaVirtual:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que cambia el status de una tarjeta a bloqueada.'
+      summary: 'Bloquea una tarjeta de crédito'
+      operationId: 'ops_005'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/blockCreditCardRequest'
+        description: Objeto de entrada para cambiar status a bloqueado de una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blockCreditCardResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/DesbloquearTarjetaVirtual:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que cambia el status de una tarjeta a desbloqueada.'
+      summary: 'Desbloquea una tarjeta de crédito'
+      operationId: 'ops_006'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unblockCreditCardRequest'
+        description: Objeto de entrada para cambiar status a desbloqueado de una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unblockCreditCardResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/ConsultarTarjetaCredito:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: ''
+      summary: 'Consulta datos de una tarjeta de crédito'
+      operationId: 'ops_007'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getTDCRequest'
+        description: Objeto de entrada para cambiar consultar una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getTDCResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/ConsultarMovimientosTarjeta:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: ''
+      summary: 'Consulta movimientos de una tarjeta de crédito'
+      operationId: 'ops_008'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getTDCMovementsRequest'
+        description: Objeto de entrada para cambiar consultar movimientos de una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getTDCMovementsResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/CancelarTarjetaVirtual:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que cancela una tarjeta'
+      summary: 'Cancela una tarjeta de crédito'
+      operationId: 'ops_009'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cancelVirtualTDCRequest'
+        description: Objeto que envia una peticion de cancelación
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cancelVirtualTDCResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/AsignarLimiteCredito:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Establece un limite de credito'
+      summary: 'Asigna un limite de credito'
+      operationId: 'ops_012'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/creditLimitRequest'
+        description: Objeto que envia una peticion de cancelación
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/creditLimitResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/ReasignarTarjeta:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Reasigna una TDC'
+      summary: 'Reasigna una tarjeta de credito'
+      operationId: 'ops_016'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/reasignCreditCardRequest'
+        description: Objeto que envia una peticion de reasignacion
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/reasignCreditCardResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/MovimientoManual:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Realiza un movimiento manual a una TDC'
+      summary: 'Asigna un movimiento manual a TDC'
+      operationId: 'ops_017'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/manualMovementRequest'
+        description: Objeto que envia una peticion de reasignacion
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/manualMovementResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/ObtenerMovimientoManual:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Realiza una consulta de movimiento manual a una TDC'
+      summary: 'Asigna una consulta de movimiento manual a TDC'
+      operationId: 'ops_018'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getManualMovementRequest'
+        description: Objeto que envia una peticion de reasignacion
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getManualMovementResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /virtual/credit-card/GeneraCodigoValidacion:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: ''
+      summary: 'Genera un codigo de validacion'
+      operationId: 'ops_0013'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/validationCodeRequest'
+        description: Genera un codigo de validacion temporal
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/validationCodeResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+                
+  /virtual/credit-card/ConsultaFechasValorD2:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: ''
+      summary: 'Consultar la fecha valor datos3 (NIP de una tarjeta) registrada en la base de datosexterna'
+      operationId: 'ops_0013'
+      tags:
+        - Virtual Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Request-ConsultaFechasValorD2'
+        description: Consultar la fecha valor datos3 (NIP de una tarjeta) registrada en la base de datosexterna
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success-ConsultaFechasValorD2'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  
+                
+  /credit-card/AltaTarjetaOnb:
+    post:
+      security:
+        - Bearer: []
+      description: 'Metodo que crea y asigna una nueva tarjeta'
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      summary: 'Asigna tarjeta de crédito fisica o virtual'
+      operationId: 'ops_f_002'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createCardRequest'
+        description: Objeto que asigna un nuevo NIP secreto a una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createCardResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/ActivarTarjetaCredito:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que activa una nueva tarjeta.'
+      summary: 'Activa una nueva tarjeta de crédito'
+      operationId: 'ops_f_003'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/activatenewCreditCardRequest'
+        description: Objeto de entrada para cambiar status a activo de una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/activatenewCreditCardResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/AsignarNIP:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que asigna un NIP a una tarjeta'
+      summary: 'Asigna NIP a tarjeta de crédito'
+      operationId: 'ops_f_004'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/assignNipRequest'
+        description: Objeto que asigna un nuevo NIP secreto a una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/assignNipResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/BloquearTarjeta:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que cambia el status de una tarjeta a bloqueada.'
+      summary: 'Bloquea una tarjeta de crédito'
+      operationId: 'ops_f_005'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/blockCreditCardRequest'
+        description: Objeto de entrada para cambiar status a bloqueado de una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blockCreditCardResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/DesbloquearTarjeta:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que cambia el status de una tarjeta a desbloqueada.'
+      summary: 'Desbloquea una tarjeta de crédito'
+      operationId: 'ops_f_006'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unblockCreditCardRequest'
+        description: Objeto de entrada para cambiar status a desbloqueado de una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unblockCreditCardResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/ConsultarTarjetaCredito:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: ''
+      summary: 'Consulta datos de una tarjeta de crédito'
+      operationId: 'ops_f_007'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getTDCRequest'
+        description: Objeto de entrada para cambiar consultar una TDC
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getTDCResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/management/notification:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo envia una notificación al usuario'
+      summary: 'Envia una notificación'
+      operationId: 'ops_f_010'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/notificationRequest'
+        description: Objeto que envia una peticion de cancelación
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notificationResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/AsignarDiaFechaCorte:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Establece una nueva fecha de corte'
+      summary: 'Asigna fecha de corte'
+      operationId: 'ops_f_011'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/endDateRequest'
+        description: Objeto que envia una peticion de cancelación
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/endDateResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/AsignarLimiteCredito:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Establece un limite de credito'
+      summary: 'Asigna un limite de credito'
+      operationId: 'ops_f_012'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/creditLimitRequest'
+        description: Objeto que envia una peticion de cancelación
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/creditLimitResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/SolicitarReposicion:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Solicitud de reposición'
+      summary: 'Solicitud de reposición'
+      operationId: 'ops_f_013'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/replacementRequest'
+        description: Objeto que envia una peticion de cancelación
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replacementResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/BajaTarjetahabiente:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que elimina datos de un cliente.'
+      summary: 'Elimina los datos de un tarjetahabiente'
+      operationId: 'ops_f_014'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deleteClientRequest'
+        description: Objeto de entrada para la actualización de un cliente
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deleteClientResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  /credit-card/ActualizarDatosCliente:
+    post:
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: apikey
+          schema:
+            type: string
+          required: true
+          description: Valid API Key
+      description: 'Metodo que actualiza datos de un cliente.'
+      summary: 'Actualiza los datos de un cliente'
+      operationId: 'ops_f_015'
+      tags:
+        - Fisical Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateClientRequest'
+        description: Objeto de entrada para la actualización de un cliente
+        required: true
+      responses:
+        '200':
+          description: OK,
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateClientResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client-Error'
+                
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unauthorized-Error'
+          
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Not-Found-Error'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Server-Error'
+  
+components:
+  securitySchemes:
+    Bearer:
+      description: ''
+      type: http
+      scheme: bearer
+  schemas:
+    activatenewCreditCardRequest:
+      description: Parámetros a enviar para activar una tarjeta de credito
+      type: object
+      properties:
+        IDSolicitud:
+          type: number
+        Tarjeta:
+          type: number
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        DiaCorte:
+          type: integer
+      example:
+        IDSolicitud: 1
+        Tarjeta: 4433221122336541
+        MedioAcceso: "5522113344"
+        TipoMedioAcceso: "TEL"
+        DiaCorte: 21
+    activatenewCreditCardResponse:
+      type: object
+      properties:
+        SUCCESS:
+          type: boolean
+        MESSAGE:
+          type: string
+        STATUS_CODE:
+          type: integer
+          format: int32
+        DATA:
+          type: object
+          properties:
+            IDSolicitud:
+              type: integer
+            Tarjeta:
+              type: number
+            MedioAcceso:
+              type: string
+            CodRespuesta:
+              type: string
+            DescRespuesta:
+              type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          Tarjeta: 4433221122336541
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    blockCreditCardRequest:
+      description: Parámetros a enviar para bloquear una tarjeta de credito
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        Tarjeta:
+          type: integer
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        MotivoBloqueo:
+          type: string
+      example:
+        IDSolicitud: 1
+        Tarjeta: 4433221122336541
+        MedioAcceso: "5522113344"
+        TipoMedioAcceso: "TEL"
+        MotivoBloqueo: "015"
+    blockCreditCardResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              Tarjeta:
+                type: integer
+              MedioAcceso:
+                type: string
+              Saldo:
+                type: number
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          Tarjeta: 4433221122336541
+          Saldo: 1000.67
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    unblockCreditCardRequest:
+      description: Parámetros a enviar para desbloquear una tarjeta de credito
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        Tarjeta:
+          type: integer
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        MotivoBloqueo:
+          type: string
+      example:
+        IDSolicitud: 1
+        Tarjeta: 4433221122336541
+        MedioAcceso: "5522113344"
+        TipoMedioAcceso: "TEL"
+        MotivoBloqueo: "015"
+    unblockCreditCardResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              Tarjeta:
+                type: integer
+              MedioAcceso:
+                type: string
+              Saldo:
+                type: number
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          Tarjeta: 4433221122336541
+          Saldo: 1000.67
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    assignNipRequest:
+      description: Parámetros a enviar para asignar un NIP a una tarjeta de credito
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        Tarjeta:
+          type: integer
+        NIPNuevo:
+          type: string
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+      example:
+        IDSolicitud: 1
+        Tarjeta: 4433221122336541
+        NIPNuevo: "1000"
+        MedioAcceso: "5522113344"
+        TipoMedioAcceso: "TEL"
+    createCardRequest:
+      description: Parámetros a enviar para asignar un NIP a una tarjeta de credito
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        ClaveEmpresa:
+          type: integer
+        Nombre:
+          type: string
+        PrimerApellido:
+          type: string
+        SegundoApellido:
+          type: string
+        NombreEmbozado:
+          type: string
+        RFC:
+          type: string
+        CURP:
+          type: string
+        Genero:
+          type: string
+        FechaNacimiento:
+          type: string
+        Correo:
+          type: string
+        Telefono:
+          type: integer
+        EntidadNacimiento:
+          type: string
+        Ocupacion:
+          type: string
+        Profesion:
+          type: string
+        GiroNegocio:
+          type: string
+        Latitud:
+          type: string
+        Longitud:
+          type: string
+        Ciudad:
+          type: string
+        Calle:
+          type: string
+        NumExterior:
+          type: string
+        NumInterior:
+          type: string
+        Colonia:
+          type: string
+        Delegacion:
+          type: string
+        ClaveEstado:
+          type: string
+        ClaveMunicipio:
+          type: string
+        CP:
+          type: integer
+        TipoManufactura:
+          type: string
+        PaisNacimiento:
+          type: integer
+      example:
+        IDSolicitud: 161122
+        MedioAcceso: ""
+        TipoMedioAcceso: ""
+        RFC: "AAAA010101111"
+        CURP: "AAAA010101AAAAA01"
+        ClaveEmpresa: "99000304"
+        RegistroCliente: "778000257"
+        Nombre: "Prueba Amarello"
+        PrimerApellido: "SA"
+        SegundoApellido: "CV"
+        NombreEmbozado: "Prueba Amarello"
+        Correo: "ejemplo@prueba.com"
+        Telefono: "5522113322"
+        FechaNacimiento: "1990-01-01"
+        Genero: "F"
+        EntidadNacimiento: "01"
+        Ocupacion: "NA"
+        Profesion: "NA"
+        GiroNegocio: "NA"
+        Latitud: "NA"
+        Longitud: "NA"
+        Ciudad: "MX"
+        Calle: "NA"
+        NumExterior: "NA"
+        NumInterior: "NA"
+        Colonia: "NA"
+        Delegacion: "NA"
+        ClaveMunicipio: "009"
+        ClaveEstado: "01"
+        CP: "07530"
+        TipoManufactura: "V"
+        PaisNacimiento: "484"
+    createCardResponse:
+      type: object
+      properties:
+        SUCCESS:
+          type: boolean
+        MESSAGE:
+          type: string
+        STATUS_CODE:
+          type: integer
+          format: int32
+        DATA:
+          type: object
+          properties:
+            IDSolicitud:
+              type: integer
+            RegistroCliente:
+              type: string
+            CuentaCacao:
+              type: string
+            Tarjeta:
+              type: string
+            MotivoRechazo:
+              type: integer
+            FechaVencimiento:
+              type: string
+            CLABE: 
+              type: string
+            CodRespuesta:
+              type: integer
+            DescRespuesta:
+              type: string
+          example:
+            IDSolicitud: "int"
+            RegistroCliente: "string"
+            CuentaCacao: "string"
+            Tarjeta: "string"
+            MotivoRechazo:  "int"
+            FechaVencimiento: "string"
+            CLABE: "string"
+            CodRespuesta: "int"
+            DescRespuesta: "string"
+    assignNipResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              Tarjeta:
+                type: integer
+              MedioAcceso:
+                type: string
+              Saldo:
+                type: number
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          Tarjeta: 4433221122336541
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    getTDCRequest:
+      type: object
+      properties:
+        SUCCESS:
+          type: boolean
+        MESSAGE:
+          type: string
+        STATUS_CODE:
+          type: integer
+          format: int32
+        DATA:
+          type: object
+          properties:
+            IDSolicitud:
+              type: integer
+            Tarjeta:
+              type: integer
+            MedioAcceso:
+              type: string
+            TipoMedioAcceso:
+              type: string
+      example:
+        IDSolicitud: 1
+        Tarjeta: 4433221122336541
+        MedioAcceso: ""
+        TipoMedioAcceso: ""
+    getTDCResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              Tarjeta:
+                type: integer
+              MedioAcceso:
+                type: string
+              Cuenta:
+                type: integer
+              Clabe:
+                type: integer
+              CuentaCacao:
+                type: integer
+              FechaApertura:
+                type: string
+              NombreCliente:
+                type: string
+              Estatus:
+                type: string
+              TipoManufactura:
+                type: string
+              NumeroAdicionales:
+                type: integer
+              NombresAdicionales:
+                type: object
+                properties:
+                  Nombre:
+                    type: string
+                  FechaCorte:
+                    type: string
+                  SaldoVencido:
+                    type: number
+              FechaCorte:
+                type: string
+              FechaLimitePago:
+                type: string
+              SaldoalCorteAnterior:
+                type: number
+              SaldoActual:
+                type: number
+              CreditoDisponible:
+                type: number
+              SaldoPromedio:
+                type: number
+              InteresesPeriodo:
+                type: number
+              PagoMinimoalCorte:
+                type: number
+              MontoUltimoPago:
+                type: number
+              FechaUltimoPago:
+                type: string
+              FechaUltimaCompra:
+                type: string
+              MontoUltimaCompra:
+                type: number
+              TotalComprasPeriodo:
+                type: number
+              FechaUltimoRetiroATM:
+                type: string
+              MontoUltimoRetiroATM:
+                type: number
+              TotalRetirosATMenPeriodo:
+                type: number
+              ComisionesCobradas:
+                type: number
+              FechaUltimaComisionCobrada:
+                type: string
+              AtrasoTotal:
+                type: number
+              PagosVencidos:
+                type: object
+                properties:
+                  FechaCorte:
+                    type: string
+                  SaldoVencido:
+                    type: number
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          Tarjeta: 4433221122336541
+          Cuenta: 1011
+          Clabe: 10023827123
+          CuentaCacao: 1938282
+          FechaApertura: "2021-10-18"
+          NombreCliente: "Armando Perez Hernandez"
+          Estatus: Activa
+          TipoManufactura: F
+          NumeroAdicionales:
+          NombreAdicionales:
+            Nombre: "Adrian Gamboa Lule"
+            FechaCorte: "2021-10-18"
+            SaldoVencido: 100.34
+          FechaCorte: "2021-10-18"
+          FechaLimitePago: "2021-10-18"
+          SaldoalCorteAnterior: 100.34
+          SaldoActual: 100.34
+          CreditoDisponible: 100.01
+          SaldoPromedio: 100.34
+          InteresesPeriodo: 10.34
+          PagoMinimoalCorte: 30.34
+          MontoUltimoPago: 30.34
+          FechaUltimoPago: "2021-10-18"
+          FechaUltimaCompra: "2021-10-18"
+          MontoUltimaCompra: 20.34
+          TotalComprasPeriodo: 200.34
+          FechaUltimoRetiroATM: "2021-10-18"
+          MontoUltimoRetiroATM: 1.34
+          TotalRetirosATMenPeriodo: 100.34
+          ComisionesCobradas: 1.34
+          FechaUltimaComisionCobrada: "2021-10-18"
+          AtrasoTotal: 1000.34
+          PagosVencidos:
+            FechaCorte: "2021-10-18"
+            SaldoVencido: 234.34
+          CodRespuesta: "0000"
+          DescRespuesta: Aprobada
+    getTDCMovementsRequest:
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        Tarjeta:
+          type: integer
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        FechaInicial:
+          type: string
+        FechaFinal:
+          type: string
+        MaxMovimientos:
+          type: integer
+      example:
+        IDSolicitud: 1
+        Tarjeta: 4433221122336541
+        MedioAcceso: ""
+        TipoMedioAcceso: ""
+        FechaInicial: ""
+        FechaFinal: ""
+        MaxMovimientos: 10
+    getTDCMovementsResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              Tarjeta:
+                type: integer
+              Movimientos:
+                type: object
+                properties:
+                  ImporteOrigenMovimiento:
+                    type: string
+                  MonedaOrigenMovimiento:
+                    type: string
+                  NumeroAfiliacionComercio:
+                    type: string
+                  DescripcionComercio:
+                    type: string
+                  PaisComercio:
+                    type: string
+                  DescripcionPais:
+                    type: string
+                  SaldoDespuesMovimiento:
+                    type: number
+                  ClaveMovimiento:
+                    type: string
+                  MCC:
+                    type: string
+                  EstatusPostOperacion:
+                    type: string
+                  DescripcionPostOperacion:
+                    type: string
+                  IDMovimiento:
+                    type: string
+                  FechaMovimiento:
+                    type: string
+                  ConceptoMovimiento:
+                    type: string
+                  TipoMovimientoCargoAbono:
+                    type: string
+                  ImporteMovimiento:
+                    type: string
+                  MonedaMovimiento:
+                    type: string
+                  Referencia:
+                    type: string
+                  Observaciones:
+                    type: string
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          Tarjeta: 4433221122336541
+          Movimientos: 
+            ImporteOrigenMovimiento: "string"
+            MonedaOrigenMovimiento: "string"
+            NumeroAfiliacionComercio: "string"
+            DescripcionComercio: "string"
+            PaisComercio: "string"
+            DescripcionPais: "string"
+            SaldoDespuesMovimiento: "string"
+            ClaveMovimiento: "string"
+            MCC: "string"
+            EstatusPostOperacion: "string"
+            DescripcionPostOperacion: "string"
+            IDMovimiento: "string"
+            FechaMovimiento: "string"
+            ConceptoMovimiento: "string"
+            TipoMovimientoCargoAbono: "string"
+            ImporteMovimiento: "string"
+            MonedaMovimiento: "string"
+            Referencia: "string"
+            Observaciones: "string"
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    cancelVirtualTDCRequest:
+      description: Parámetros a enviar para cancelar una tarjeta de credito
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        Tarjeta:
+          type: integer
+        MotivoCancelacion:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        MedioAcceso: 
+          type: string
+      example:
+        IDSolicitud: 1
+        Tarjeta: 4433221122336541
+        MotivoCancelacion: "03"
+        TipoMedioAcceso: TEL
+        DescRespuesta: "5555555555"
+    cancelVirtualTDCResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              Tarjeta:
+                type: integer
+              Saldo:
+                type: number
+              TipoMedioAcceso:
+                type: string
+              MedioAcceso:
+                type: string
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          Tarjeta: 4433221122336541
+          Saldo: 100.43
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    loginRequest:
+      description: Parámetros a enviar para iniciar sesión
+      type: object
+      properties:
+        NombreUsuario:
+          type: string
+        Password:
+          type: string
+      example:
+        NombreUsuario: "SoyAdministrador"
+        Password: "MiPass"
+    loginResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+              UserID:
+                type: string
+              NombreUsuario:
+                type: string
+              PrimerApellido:
+                type: string
+              SegundoApellido:
+                type: string
+              Token:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+          UserID: "7c54fb7b-f176-4cf6-bf30-1983f67b83e5"
+          NombreUsuario: "Juan"
+          PrimerApellido: "Gonzalez"
+          SegundoApellido: "Hernandez"
+          Token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Im
+                          x1aXMgZGUgbGEgdG9ycmUiLCJuYmYiOjE1NDcyNTg5MDUsImV4cCI6MTU0
+                          NzI2MjUwNSwiaWF0IjoxNTQ3MjU4OTA1LCJpc3MiOiJodHRwOi8vbG9jYW
+                          xob3N0OjU3Nzg2IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1Nzc4NiJ9
+                          .UaN4xges6aDnGuy0t142ZkCZ_9EwNG_khQjxwIQjh3Y"
+    notificationRequest:
+      description: Parámetros a enviar para enviar una notificacion.
+      type: object
+      properties:
+        Tarjeta:
+          type: string
+        NumeroCuenta:
+          type: integer
+        Importe:
+          type: number
+        Moneda:
+          type: string
+        FechaHora:
+          type: string
+        NumeroAutorizacion:
+          type: string
+        POSEntryMode:
+          type: string
+        ClaveMovimiento:
+          type: string
+        CodigoProceso:
+          type: string
+        NumeroAfiliacionComercio:
+          type: string
+        NombreComercio:
+          type: string
+        MCC:
+          type: string
+        Nombre:
+          type: string
+        PrimerApellido:
+          type: string
+        SegundoApellido:
+          type: string
+        Telefono:
+          type: string
+        Correo:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        MedioAcceso:
+          type: string
+        InstitucionOrdenante:
+          type: integer
+        InstitucionBeneficiaria:
+          type: integer
+        ClaveRastreo:
+          type: string
+        NombreOrdenante:
+          type: string
+        RfcCurpOrdenante:
+          type: string
+        NombreBeneficiario:
+          type: string
+        CuentaBeneficiario:
+          type: string
+        RfcCurpBeneficiario:
+          type: string
+        ConceptoPago:
+          type: string
+        ReferenciaNumerica:
+          type: integer
+        TipoManufactura:
+          type: integer
+      example:
+        Tarjeta: "521672123247"
+        NumeroCuenta: "Cuenta Cacao"
+        Importe: 100.23
+        Moneda: "MXN"
+        FechaHora: "18-10-2021 13:41:01"
+        NumeroAutorizacion: "1234567890123"
+        POSEntryMode: "01"
+        ClaveMovimiento: "0012"
+        CodigoProceso: "212010"
+        NumeroAfiliacionComercio: "1000"
+        NombreComercio: "TotalPlay"
+        MCC: "0000"
+        Nombre: "Adrian"
+        PrimerApellido: "Gamboa"
+        SegundoApellido: "Lule"
+        Telefono: "5555555555"
+        Correo: "usuario@ejemplo.com"
+        TipoMedioAcceso: "TEL"
+        MedioAcceso: "5555555555"
+        InstitucionOrdenante: "00000"
+        InstitucionBeneficiaria: "00000"
+        ClaveRastreo: "x"
+        NombreOrdenante: "x"
+        RfcCurpOrdenante: "rfccurp"
+        NombreBeneficiario: "Enrique"
+        CuentaBeneficiario: 111111111111115
+        RfcCurpBeneficiario: "rfccurp"
+        ConceptoPago: "pago"
+        ReferenciaNumerica: "1234567"
+        TipoManufactura: "V o F"
+    notificationResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    endDateRequest:
+      description: Parámetros a enviar para enviar una notificacion.
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        Tarjeta:
+          type: integer
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        DiaCorte:
+          type: integer
+      example:
+        IDSolicitud: 1
+        Tarjeta: 5513103291843726
+        MedioAcceso: "100.23"
+        TipoMedioAcceso: "MXN"
+        DiaCorte: 21
+    endDateResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    creditLimitRequest:
+      description: Parámetros a enviar para enviar una notificacion.
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        Tarjeta:
+          type: integer
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        LimiteCredito:
+          type: number
+      example:
+        IDSolicitud: 1
+        Tarjeta: 5513103291843726
+        MedioAcceso: "100.23"
+        TipoMedioAcceso: "MXN"
+        LimiteCredito: 20000.99
+    creditLimitResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    replacementRequest:
+      description: Parámetros a enviar para una reposicion.
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        Tarjeta:
+          type: integer
+        NombreEmbozado:
+          type: string
+        RazonReposicion:
+          type: integer
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+      example:
+        IDSolicitud: 1
+        Tarjeta: 5513103291843726
+        NombreEmbozado: "Reposicion"
+        RazonReposicion: 4
+        MedioAcceso: "5513200800"
+        TipoMedioAcceso: "TEL"
+    replacementResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              TarjetaOriginal: 
+                type: integer
+              TarjetaNueva:
+                type: integer
+              MedioAccesoOriginal:
+                type: string
+              MedioAccesoNuevo:
+                type: string
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          TarjetaOriginal: 5513103291843726
+          TarjetaNueva: 5513103291843727
+          MedioAccesoOriginal: "TEL"
+          MedioAccesoNuevo: "TEL"
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    updateClientRequest:
+      description: Parámetros a enviar para una actualización de datos de cliente.
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        TipoActualizacion:
+          type: string
+        ClaveEmpresa:
+          type: string
+        Tarjeta:
+          type: integer
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        Nombre:
+          type: string
+        PrimerApellido:
+          type: string
+        SegundoApellido:
+          type: string
+        NombreEmbozar:
+          type: string
+        Nacionalidad:
+          type: string
+        EntidadNacimiento:
+          type: string
+        FechaNacimiento:
+          type: string
+        Genero:
+          type: string
+        Correo:
+          type: string
+        Telefono:
+          type: integer
+        Celular:
+          type: integer
+        Ciudad:
+          type: string
+        Calle:
+          type: string
+        NumExterior:
+          type: string
+        NumInterior:
+          type: string
+        Colonia:
+          type: string
+        Delegacion:
+          type: string
+        CP:
+          type: integer
+        Pais: 
+          type: integer
+        TipoIdentificacion:
+          type: string
+        NumeroIdentificacion:
+          type: string
+        RFC:
+          type: string
+        CURP:
+          type: string
+        TipoCliente:
+          type: string
+        Aceptación:
+          type: integer
+      example:
+        IDSolicitud: "1"
+        TipoActualizacion: "1"
+        ClaveEmpresa: "1111111111"
+        Tarjeta: 5513103291843726
+        MedioAcceso: "5513200800"
+        TipoMedioAcceso: "TEL"
+        Nombre: "Adrian"
+        PrimerApellido: "Gamboa"
+        SegundoApellido: "Lule"
+        NombreEmbozar: "x"
+        Nacionalidad: "Mexicana"
+        EntidadNacimiento: "Ciudad de México"
+        FechaNacimiento: "1998-03-19"
+        Genero: "M"
+        Correo: "usuario@ejemplo.com"
+        Telefono: 5541711017
+        Celular: 5513200800
+        Calle: "Camino de la enseñanza"
+        NumExterior: "45"
+        NumInterior: "1"
+        Colonia: "Campestre Aragon"
+        Delegacion: "Gustavo A. Madero"
+        CP: "07519"
+        Pais: 3
+        TipoIdentificador: "X"
+        NumeroIdentificacion: "10"
+        RFC: "XXXXXXX"
+        CURP: "XXXXXXXXXX"
+        TipoCliente: "1"
+        Aceptacion: 1
+    updateClientResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    deleteClientRequest:
+      description: Parámetros a enviar para una reposicion.
+      type: object
+      properties:
+        Empresa:
+          type: string
+        RegistroCliente:
+          type: string
+        Tarjeta:
+          type: integer
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+      example:
+        Empresa: "Total Play"
+        RegistroCliente: "1234567890"
+        Tarjeta: 5513103291843726
+        MedioAcceso: "5513200800"
+        TipoMedioAcceso: "TEL"
+    deleteClientResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    reasignCreditCardRequest:
+      description: Parámetros a enviar para enviar una peticion de reasignacion.
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        TipoMedioAccesoAnterior:
+          type: string
+        MedioAccesoAnterior:
+          type: string
+        TipoMedioAccesoNuevo:
+          type: string
+        MedioAccesoNuevo:
+          type: string
+        TarjetaNueva:
+          type: integer
+        TarjetaAnterior:
+          type: integer
+      example:
+        IDSolicitud: 1
+        TipoMedioAccesoAnterior: "TAR"
+        MedioAccesoAnterior: "9900030400000030"
+        TipoMedioAccesoNuevo: "TAR"
+        MedioAccesoNuevo: "9900030400000071"
+        TarjetaNueva: 9900030400000071
+        TarjetaAnterior: 9900030400000030
+    reasignCreditCardResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: 1
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    manualMovementRequest: 
+      description: Parámetros a enviar para realizar un movimiento manual.
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        Tarjeta:
+          type: integer
+        MedioAcceso:
+          type: string
+        TipoMedioAcceso:
+          type: string
+        Importe:
+          type: number
+        ClaveMovimiento:
+          type: string
+        RefNumerica:
+          type: string
+        Observaciones:
+          type: string
+      example:
+        IDSolicitud: 1
+        Tarjeta: 9900030400000071
+        MedioAcceso: ""
+        TipoMedioAcceso: ""
+        Importe: 100.99
+        ClaveMovimiento: "T5"
+        RefNumerica: "1"
+        Observaciones: "Prueba"
+    manualMovementResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              Tarjeta:
+                type: string
+              TipoMedioAcceso:
+                type: string
+              MedioAcceso:
+                type: string
+              Importe:
+                type: number
+              ClaveMovimiento:
+                type: string
+              RefNumerica:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: "1"
+          ClaveMovimiento: "T5"
+          Tarjeta: "9900030400000071"
+          MedioAcceso: ""
+          Importe: 100.99
+          Saldofinal: 605.94
+          Fecha: "2021-11-23 20:13:13"
+          Referencia: ""
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+    getManualMovementRequest: 
+      description: Parámetros a enviar para realizar una consulta de un movimiento manual.
+      type: object
+      properties:
+        IDSolicitud:
+          type: integer
+        ClaveMovimiento:
+          type: string
+      example:
+        IDSolicitud: "1"
+        ClaveMovimiento: "T5"
+    getManualMovementResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              IDSolicitud:
+                type: integer
+              Tarjeta:
+                type: string
+              TipoMedioAcceso:
+                type: string
+              MedioAcceso:
+                type: string
+              Importe:
+                type: number
+              ClaveMovimiento:
+                type: string
+              RefNumerica:
+                type: string
+              Observaciones:
+                type: string
+              NumeroAutorización:
+                type: string
+              CodRespuesta:
+                type: number
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          IDSolicitud: "1"
+          ClaveMovimiento: "T5"
+          Tarjeta: "9900030400000071"
+          MedioAcceso: ""
+          Importe: 100.99
+          Saldofinal: 605.94
+          Fecha: "2021-11-23 20:13:13"
+          Referencia: ""
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+          
+    
+    validationCodeRequest:
+      type: object
+      properties:
+        SUCCESS:
+          type: boolean
+        MESSAGE:
+          type: string
+        STATUS_CODE:
+          type: integer
+          format: int32
+        DATA:
+          type: object
+          properties:
+            Tarjeta:
+              type: integer
+            MedioAcceso:
+              type: string
+            TipoMedioAcceso:
+              type: string
+      example:
+        Tarjeta: 4433221122336541
+        MedioAcceso: ""
+        TipoMedioAcceso: ""
+    validationCodeResponse:
+      type: object
+      properties:
+          SUCCESS:
+            type: boolean
+          MESSAGE:
+            type: string
+          STATUS_CODE:
+            type: integer
+            format: int32
+          DATA:
+            type: object
+            properties:
+              CodigoValidacion:
+                type: string
+              FechaHoraExpiracion:
+                type: string
+              SegundosParaExpiracion:
+                type: integer
+              Tarjeta:
+                type: integer
+              MedioAcceso:
+                type: string
+              TipoMedioAcceso:
+                type: string
+              CodRespuesta:
+                type: string
+              DescRespuesta:
+                type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+          CodigoValidacion: "318"
+          FechaHoraExpiracion: "2021-11-24 23:27:26"
+          SegundosParaExpiracion: 0
+          Tarjeta: 4433221122336541
+          MedioAcceso: 
+          TipoMedioAcceso:
+          CodRespuesta: "0000"
+          DescRespuesta: "Aprobada"
+          
+    Not-Found-Error:
+      type: object
+      properties:
+        SUCCESS:
+          type: boolean
+        MESSAGE:
+          type: string
+        STATUS_CODE:
+          type: integer
+        DATA:
+          type: object
+      example:
+          SUCCESS: false
+          MESSAGE: "Not Found"
+          STATUS_CODE: 404
+          DATA: null
+    Client-Error:
+      type: object
+      properties:
+        SUCCESS:
+          type: boolean
+        MESSAGE:
+          type: string
+        STATUS_CODE:
+          type: integer
+        DATA:
+          type: object
+          properties:
+            ERROR_CODE_DESCRIPTION:
+              type: string
+      example:
+        SUCCESS: false
+        MESSAGE: Bad Request
+        STATUS_CODE: 400
+        DATA:
+          ERROR_CODE_DESCRIPTION: "Bad request"
+    Server-Error:
+      type: object
+      properties:
+        SUCCESS:
+          type: boolean
+        MESSAGE:
+          type: string
+        STATUS_CODE:
+          type: integer
+        DATA:
+          type: object
+          properties:
+            ERROR_CODE_DESCRIPTION:
+              type: string
+      example:
+        SUCCESS: false
+        MESSAGE: Internal Error
+        STATUS_CODE: 500
+        DATA:
+          ERROR_CODE_DESCRIPTION: "Server Error"
+    Unauthorized-Error:
+      type: object
+      properties:
+        SUCCESS:
+          type: boolean
+        MESSAGE:
+          type: string
+        STATUS_CODE:
+          type: integer
+        DATA:
+          type: object
+          properties:
+            ERROR_CODE_DESCRIPTION:
+              type: string
+      example:
+        SUCCESS: false
+        MESSAGE: Invalid Credentials
+        STATUS_CODE: 401
+        DATA:
+          ERROR_CODE_DESCRIPTION: "Unauthorized"
+          
+    Request-ConsultaFechasValorD2:
+      type: object
+      properties:
+        IDSolicitud:
+          type: string
+        Tarjeta:
+          type: string
+      example:
+        Tarjeta: "123"
+        MedioAcceso: "9900004400002003"
+        
+    Success-ConsultaFechasValorD2:
+      type: object
+      properties:
+        SUCCESS:
+          type: boolean
+        MESSAGE:
+          type: string
+        STATUS_CODE:
+          type: integer
+          format: int32
+        DATA:
+          type: object
+          properties:
+            IDSolicitud:
+              type: string
+            Tarjeta:
+              type: string
+            MedioAcceso:
+              type: string
+            TipoMedioAcceso:
+              type: string
+            ValorD3:
+              type: string
+            CodRespuesta:
+              type: string
+            DescRespuesta:
+              type: string
+      example:
+        SUCCESS: true
+        MESSAGE: OK
+        STATUS_CODE: 200
+        DATA:
+         IDSolicitud: "123"
+         Tarjeta: "Ssnw/+LKn8BJ5JtZXm3W4M4NKKnXbDPP"
+         MedioAcceso: ""
+         TipoMedioAcceso: ""
+         ValorD3: "bAz41ngDp3E="
+         CodRespuesta: "0000"
+         DescRespuesta: "Aprobada"
